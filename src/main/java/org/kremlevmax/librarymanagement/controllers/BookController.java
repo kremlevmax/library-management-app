@@ -40,6 +40,7 @@ public class BookController {
 
     @PostMapping()
     public String addBook(@ModelAttribute("book") Book book) {
+        dao.createBook(book);
         return "redirect:/books";
     }
 

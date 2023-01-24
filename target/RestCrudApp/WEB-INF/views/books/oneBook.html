@@ -6,7 +6,11 @@
 </head>
 <body>
 <h2 th:text="${book.getTitle()}"></h2>
+<hr/>
 <span>Author: </span><span th:text="${book.getAuthor()}"/>
-
+<br/>
+<span>Originally published: </span><span th:text="${book.year}"/>
+<hr/>
+<a href="/books">Back</a>
 </body>
 </html>

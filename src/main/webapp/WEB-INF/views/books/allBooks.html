@@ -6,10 +6,13 @@
 </head>
 <body>
 <h2>All Books</h2>
+<hr/>
 <div th:each="book : ${books}">
     <a th:href="@{/books/{id}(id=${book.getBook_id()})}">
-        <span th:text="${book.getTitle()}"/>, <span th:text="${book.getAuthor()}"/>
+        <span th:text="${book.getAuthor()}"/>, <span th:text="${book.getTitle()}"/>
     </a>
 </div>
+<hr/>
+    <a href="/books/add-book">Add a book</a>
 </body>
 </html>
