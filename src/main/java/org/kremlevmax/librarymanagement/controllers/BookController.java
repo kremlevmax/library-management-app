@@ -35,13 +35,19 @@ public class BookController {
 
     @GetMapping("/add-book")
     public String showAddBookForm(@ModelAttribute("book") Book book){
-        return "books/addBooks";
+        return "books/addBook";
     }
 
     @PostMapping()
     public String addBook(@ModelAttribute("book") Book book) {
         dao.createBook(book);
         return "redirect:/books";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showPatchBookForm(@PathVariable("id") int id, Model model) {
+        model.addAttribute("book", dao.getOneBook(id));
+        return "books/patchBook";
     }
 
 }

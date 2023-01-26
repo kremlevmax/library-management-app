@@ -6,6 +6,7 @@
 </head>
 <body>
 <h2>Add a Book</h2>
+<hr/>
 <form th:method="POST" th:action="@{/books}" th:object="${book}">
     <label for="author">Book Author:</label>
     <input type="text" th:field="*{author}" id="author"/>
@@ -16,8 +17,10 @@
     <label for="author">Book Year:</label>
     <input type="text" th:field="*{year}" id="year"/>
     <br>
-    <input type="submit" value="Create"/>
+    <input type="submit" value="Add"/>
 </form>
+<hr/>
+<a href="/books">Back</a>
 
 
 </body>
